@@ -1,0 +1,21 @@
+.photoCenter {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.myH {
+    margin: 60px 0 40px 0;
+}
+
+.textRight {
+    float: right;
+}
+
+.field {
+    margin-top: 20px;
+}
+
+.link {
+    cursor: pointer;
+}
+
