@@ -1,3 +1,7 @@
+const escapeHtml = (unsafe) => {
+    return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+}
+
 
 function openNameForm() {
     document.getElementById("nameForm").style.display = "block";
@@ -42,7 +46,7 @@ aElName.addEventListener('submit', event => {
         data = {
             "user_id": user_id,
             "firm_id": firm_id,
-            "comment_text": $("#name_text").val(),
+            "comment_text": escapeHtml($("#name_text").val()),
         };
     $.ajax({
         headers: {

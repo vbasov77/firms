@@ -11,6 +11,7 @@ class FrontController extends Controller
     {
         // Получаем данные из двух таблиц
         $firms = Firm::leftJoin('images', 'firms.id', '=', 'images.firm_id')->get(['firms.*', 'images.path']);
+
         return view('front', ['firms' => $firms]);
     }
 

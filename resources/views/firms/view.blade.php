@@ -225,9 +225,12 @@
         <script src="{{asset('js/firm/ph.js')}}"></script>
     @endguest
     <script>
+        const escapeHtml = (unsafe) => {
+            return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+        }
         // Save Comment
         $(".save-comment").on('click', function () {
-            var _comment = $(".comment").val();
+            var _comment = escapeHtml($(".comment").val());
             var _firm = $(this).data('firm');
             var vm = $(this);
             // Run Ajax
